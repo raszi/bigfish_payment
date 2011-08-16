@@ -2,7 +2,10 @@ class CreateBigfishPaymentTransactionLogs < ActiveRecord::Migration
   def self.up
     create_table :bf_payment_transaction_logs do |t|
       t.references :bf_payment_transaction, :null => false
-      t.text :result_code, :null => false
+
+      t.text :code, :null => false
+      t.text :message
+
       t.text :response
 
       t.timestamps

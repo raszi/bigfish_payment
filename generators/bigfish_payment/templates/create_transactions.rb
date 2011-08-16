@@ -5,6 +5,8 @@ class CreateBigfishPaymentTransactions < ActiveRecord::Migration
 
       #t.references :user, :null => false
 
+      t.text :response_url, :null => false
+
       t.references :bf_payment_currency, :null => false
       t.references :bf_payment_provider, :null => false
 
