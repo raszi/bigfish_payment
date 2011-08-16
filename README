@@ -1,0 +1,7 @@
+BigfishPayment
+==============
+
+This is a Rails plugin to communicate with the BIG FISH Payment Gateway API
+
+
+Copyright (c) 2011 KARASZI Istvan, released under the MIT license

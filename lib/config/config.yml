@@ -1,0 +1,7 @@
+development:
+  url: http://test.paymentgateway.hu/
+  store_name: test
+
+production:
+  url:
+  store_name:
