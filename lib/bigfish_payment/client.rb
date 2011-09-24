@@ -20,7 +20,7 @@ module BigfishPayment
       document = parser.parse
 
       root = document.root
-      raise InvalidResponse, "Root element #{root.name}" unless root.name == 'Response'
+      raise InvalidResponse, "Root element #{root.name}" unless root.name.match(/Response/)
 
       root.each do |n|
         next unless n.element?
@@ -60,7 +60,7 @@ module BigfishPayment
 
     # Starts the transaction
     def self.start(params)
-      send_request(get_url(PATH_START, params))
+      get_url(PATH_START, params)
     end
 
     # Gets the result of the transaction
