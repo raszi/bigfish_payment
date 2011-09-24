@@ -104,7 +104,15 @@ module BigfishPayment
 
     # Creates and configures a new HTTP client
     def self.get_client
-      HTTPClient.new
+      proxy = BIGFISH_CONFIG['proxy'] 
+
+      case
+        when proxy
+          Rails.logger.debug("Using proxy")
+          HTTPClient.new(proxy)
+        else
+          HTTPClient.new
+      end
     end
 
     # Creates the URL to the Payment Gateway
