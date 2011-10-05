@@ -1,16 +1,10 @@
 class CreateBigfishPaymentTransactions < ActiveRecord::Migration
   def self.up
     create_table :bf_payment_transactions do |t|
-      t.integer :amount, :null => false
-
-      #t.references :user, :null => false
-
       t.text :response_url, :null => false
 
       t.references :bf_payment_currency, :null => false
       t.references :bf_payment_provider, :null => false
-
-      t.integer :state, :default => 0, :null => false
 
       t.string :transaction_id, :limit => 32
 
